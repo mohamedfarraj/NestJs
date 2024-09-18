@@ -1,8 +1,8 @@
 import { CustomBaseEntity } from 'src/common/base/baseEntity.entity';
 import { Entity, Column } from 'typeorm';
-import * as bcrypt from "bcryptjs";
+import * as bcrypt from 'bcryptjs';
 
-@Entity()
+@Entity({ name: 'users' })
 export class UsersEntity extends CustomBaseEntity {
   @Column()
   username: string;
@@ -12,7 +12,6 @@ export class UsersEntity extends CustomBaseEntity {
 
   @Column()
   password: string;
-
 
   async comparePassword(attempt: string): Promise<boolean> {
     return await bcrypt.compare(attempt, this.password);

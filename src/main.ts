@@ -37,9 +37,10 @@ async function bootstrap() {
 
   // Swagger setup
   const options = new DocumentBuilder()
-    .setTitle('Wtheq')
-    .setDescription('Wtheq Description')
+    .setTitle('Project')
+    .setDescription('Project Description')
     .setVersion('1.0')
+    .addTag('Project')
     .build();
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('api', app, document);

@@ -3,14 +3,14 @@ import { ApiProperty } from '@nestjs/swagger';
 
 export class CreateUser {
   @IsString()
-  @ApiProperty()
+  @ApiProperty({ example: 'admin' })
   username: string;
 
   @IsEmail()
-  @ApiProperty()
+  @ApiProperty({ example: 'admin@gmail.com' })
   email: string;
 
   @IsString({ message: 'Password must be a string'})
-  @ApiProperty()
+  @ApiProperty({ example: 'password@123' })
   password: string;
 }

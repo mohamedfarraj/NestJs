@@ -8,7 +8,9 @@ import { AuthService } from './auth/auth.service';
 import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
 import { JwtStrategy } from 'src/common/shared/utils/jwt.util';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Users')
 @Module({
   imports: [
     TypeOrmModule.forFeature([UsersEntity]),

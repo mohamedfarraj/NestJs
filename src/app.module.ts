@@ -19,7 +19,7 @@ import appConfig from './common/config/app.config';
       inject: [ConfigService],
       useFactory: async (configService: ConfigService) => ({
         type: 'mysql',
-        host: 'localhost',
+        host:  configService.get<string>('app.db_host'),
         port: 3306,
         database: configService.get<string>('app.db_name'),
         username: configService.get<string>('app.db_username'),
